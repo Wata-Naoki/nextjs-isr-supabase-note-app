@@ -4,10 +4,16 @@ import { EditedComment } from '../types/type'
 import { revalidateList, revalidateSingle } from '../utils/revalidation'
 import { supabase } from '../utils/supabase'
 
+type CreateProps = {
+  note_id: string
+  user_id: string | undefined
+  content: string
+}
+
 export const useMutateComment = () => {
   const reset = useStore((state) => state.resetEditedComment)
   const createCommentMutation = useMutation(
-    async (comment: Omit<Comment, 'created_at' | 'id'>) => {
+    async (comment: CreateProps) => {
       const { data, error } = await supabase.from('comments').insert(comment)
       if (error) throw new Error(error.message)
       return data

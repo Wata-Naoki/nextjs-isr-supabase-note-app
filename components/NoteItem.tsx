@@ -28,7 +28,7 @@ export const NoteItem: React.FC<Props> = ({ id, title, content, user_id }) => {
       {userId !== undefined && userId === user_id ? (
         <div className="flex justify-end">
           <Link
-            href={`/notes/${id}`}
+            href={`/note/${id}`}
             prefetch={false}
             className=" cursor-pointer hover:text-red-400"
           >
