@@ -26,14 +26,16 @@ export const NoteItem: React.FC<Props> = ({ id, title, content, user_id }) => {
   return (
     <li>
       {userId !== undefined && userId === user_id ? (
-        <div className="flex justify-end gap-x-4">
-          <Link
-            href={`/note/${id}`}
-            prefetch={false}
-            className=" cursor-pointer hover:text-red-400"
-          >
-            {title}
-          </Link>
+        <div className="flex w-full justify-end gap-x-4">
+          <div className="w-96">
+            <Link
+              href={`/note/${id}`}
+              prefetch={false}
+              className=" cursor-pointer hover:text-red-400 "
+            >
+              {title}
+            </Link>
+          </div>
           <div className="flex">
             <PencilAltIcon
               className="h-6 w-6 cursor-pointer text-blue-500"
