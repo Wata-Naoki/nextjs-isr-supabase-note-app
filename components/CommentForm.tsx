@@ -30,7 +30,10 @@ export const CommentForm = ({ noteId }: Props) => {
     return <Spinner />
   }
   return (
-    <form onSubmit={submitHandler}>
+    <form
+      onSubmit={submitHandler}
+      className="flex flex-col items-center justify-center gap-y-6"
+    >
       <input
         type="text"
         className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"

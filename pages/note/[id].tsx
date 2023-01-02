@@ -55,10 +55,10 @@ const NotePage: NextPage<StaticProps> = ({ note }) => {
   return (
     <Layout title="NoteDetail">
       <p className="text-3xl font-semibold text-blue-500">{note.title}</p>
-      <div className="m-8 rounded-lg p-4 shadow-lg">
+      <div className="m-4 rounded-lg p-4 shadow-lg">
         <p>{note.content}</p>
       </div>
-      <ul className="m-8">
+      <ul className="">
         {note.comments.map((comment) => (
           <CommentItem
             key={comment.id}
