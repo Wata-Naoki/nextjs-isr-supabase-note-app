@@ -14,9 +14,9 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: () => {
-        // revalidateList()
+        revalidateList()
         reset()
-        alert('Note created successfully')
+        alert('ノートを作成しました')
       },
       onError: (err: any) => {
         alert(err.message)
@@ -35,10 +35,10 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: (res) => {
-        // revalidateList()
+        revalidateList()
         revalidateSingle(res[0].id)
         reset()
-        alert('Note updated successfully')
+        alert('ノートを更新しました')
       },
       onError: (err: any) => {
         alert(err.message)
@@ -55,9 +55,9 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: () => {
-        // revalidateList()
+        revalidateList()
         reset()
-        alert('Note deleted successfully')
+        alert('ノートを削除しました')
       },
       onError: (err: any) => {
         alert(err.message)

@@ -30,8 +30,8 @@ export const NoteForm = () => {
     return <Spinner />
   }
   return (
-    <form onSubmit={submitHandler}>
-      <div>
+    <form onSubmit={submitHandler} className="">
+      <div className="my-6">
         <input
           type="text"
           className="w-full rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
@@ -50,7 +50,7 @@ export const NoteForm = () => {
           onChange={(e) => update({ ...editedNote, content: e.target.value })}
         />
       </div>
-      <div className="my-2 flex justify-center">
+      <div className="my-6 flex justify-center">
         <button
           type="submit"
           className="rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"

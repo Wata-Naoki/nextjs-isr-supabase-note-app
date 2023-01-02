@@ -22,7 +22,7 @@ export const useMutateComment = () => {
       onSuccess: (res) => {
         revalidateSingle(res[0].note_id)
         reset()
-        alert('Comment created successfully')
+        alert('コメントを投稿しました')
       },
       onError: (err: any) => {
         alert(err.message)
@@ -43,7 +43,7 @@ export const useMutateComment = () => {
       onSuccess: (res) => {
         revalidateSingle(res[0].note_id)
         reset()
-        alert('Comment updated successfully')
+        alert('コメントを更新しました')
       },
       onError: (err: any) => {
         alert(err.message)
@@ -65,7 +65,7 @@ export const useMutateComment = () => {
         revalidateSingle(res[0].note_id)
 
         reset()
-        alert('Comment deleted successfully')
+        alert('コメントを削除しました')
       },
       onError: (err: any) => {
         alert(err.message)

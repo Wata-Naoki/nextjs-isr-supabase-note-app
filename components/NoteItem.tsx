@@ -26,7 +26,7 @@ export const NoteItem: React.FC<Props> = ({ id, title, content, user_id }) => {
   return (
     <li>
       {userId !== undefined && userId === user_id ? (
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-x-4">
           <Link
             href={`/note/${id}`}
             prefetch={false}
@@ -34,15 +34,16 @@ export const NoteItem: React.FC<Props> = ({ id, title, content, user_id }) => {
           >
             {title}
           </Link>
-
-          <PencilAltIcon
-            className="h-6 w-6 cursor-pointer text-blue-500"
-            onClick={() => update({ id, title, content })}
-          />
-          <TrashIcon
-            className="h-6 w-6 cursor-pointer text-red-500"
-            onClick={() => deleteNoteMutation.mutate(id)}
-          />
+          <div className="flex">
+            <PencilAltIcon
+              className="h-6 w-6 cursor-pointer text-blue-500"
+              onClick={() => update({ id, title, content })}
+            />
+            <TrashIcon
+              className="h-6 w-6 cursor-pointer text-red-500"
+              onClick={() => deleteNoteMutation.mutate(id)}
+            />
+          </div>
         </div>
       ) : null}
     </li>
